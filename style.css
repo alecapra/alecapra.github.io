@@ -196,3 +196,20 @@ ul.main-menu li a.active {
   }
 }
 
+
+.abstract-btn {
+  margin-top: 8px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.abstract-box {
+  display: none;
+  margin-top: 12px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-left: 3px solid #444;
+  text-align: justify;
+  max-width: 800px;
+}
