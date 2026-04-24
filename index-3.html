@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Alessandro Capra</title>
+  <meta name="description" content="Alessandro Capra's personal website.">
+  <meta name="author" content="PhD Candidate at the University of Amsterdam.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="keywords" content="Alessandro Capra, University of Amsterdam, UvA, PhD Economics, Economics PhD, Experimental Economics, Social Preferences, Social Norms">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alecapra.github.io/">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alessandro Capra",
+    "jobTitle": "PhD Candidate in Economics",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "University of Amsterdam",
+      "sameAs": "https://www.uva.nl"
+    },
+    "url": "https://alecapra.github.io/"
+  }
+  </script>
+
+  <style>
+    /* ── Variables ── */
+    :root {
+      --bg:           #f6f3ee;
+      --surface:      #efeae1;
+      --border:       #d4cfc3;
+      --text:         #1e1c16;
+      --muted:        #726d61;
+      --accent:       #3a6b3a;
+      --accent-light: #dde8d8;
+      --accent-hover: #285228;
+      --nav-bg:       #efeae1;
+      --radius:     6px;
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans:  'DM Sans', system-ui, sans-serif;
+      --max-w:      780px;
+      --transition: 0.18s ease;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header / Nav ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      gap: 1rem;
+    }
+
+    header .site-name {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 0.1rem;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    /* ── Main layout ── */
+    main {
+      flex: 1;
+      max-width: var(--max-w);
+      width: 100%;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    /* ── Sections ── */
+    .section { display: none; animation: fadeIn 0.25s ease; }
+    .section.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Home ── */
+    .home-layout {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .home-portrait {
+      width: 160px;
+      min-width: 160px;
+      height: 200px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    .home-text p {
+      margin-bottom: 0.9rem;
+      color: var(--text);
+      font-size: 0.97rem;
+    }
+
+    .home-text p:first-child {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    h3:first-child { margin-top: 0; }
+
+    /* ── Links ── */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* ── Research entries ── */
+    .paper-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .paper-title {
+      font-family: var(--font-serif);
+      font-size: 0.97rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 0.4rem;
+    }
+
+    .paper-authors {
+      font-size: 0.865rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .abstract-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: none;
+      border-radius: 4px;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+    }
+    .abstract-btn:hover { background: #c6d9f0; color: var(--accent-hover); }
+
+    .abstract-box {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .abstract-box table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.4rem;
+    }
+
+    .abstract-box table th {
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 0.75rem;
+      background: #e2ddd4;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .abstract-box table td {
+      padding: 0.55rem 0.75rem;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+
+    .abstract-box table tr:last-child td { border-bottom: none; }
+
+    .abstract-box table td:first-child {
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+      width: 32%;
+    }
+
+    .blurb {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── Teaching table ── */
+    .teaching-block { margin-bottom: 2.5rem; }
+
+    .institution-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .role-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .teaching-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .teaching-table thead th {
+      background: #e6e0d5;
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .teaching-table tbody td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .teaching-table tbody tr:last-child td { border-bottom: none; }
+
+    .eval-pill {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+    }
+
+    /* ── Have we met ── */
+    .activities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .activity-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.3rem;
+    }
+
+    .activity-card h3 {
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .activity-year {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0.9rem 0 0.4rem;
+    }
+
+    .activity-item {
+      display: flex;
+      gap: 0.6rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      align-items: flex-start;
+    }
+
+    .activity-item:last-child { border-bottom: none; }
+
+    .activity-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    .badge-upcoming {
+      background: #fff3cd;
+      color: #7a5700;
+    }
+
+    .badge-poster {
+      background: #d4edda;
+      color: #1a5c30;
+    }
+
+    /* ── CV ── */
+    .cv-section { font-size: 0.9rem; }
+    .cv-section iframe {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      width: 100%;
+      height: 880px;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .cv-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .cv-download:hover { background: var(--accent-hover); color: #fff; text-decoration: none; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      padding: 1.2rem 2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 620px) {
+      .home-layout { flex-direction: column; }
+      .home-portrait { width: 120px; min-width: 120px; height: 150px; }
+      .activities-grid { grid-template-columns: 1fr; }
+      header { padding: 0 1rem; }
+      main { padding: 2rem 1rem 3rem; }
+      nav a { padding: 0.3rem 0.5rem; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a class="site-name" href="#" onclick="showSection('home')">Alessandro Capra</a>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showSection('home')" id="nav-home" class="active">home</a></li>
+          <li><a href="#" onclick="showSection('research')" id="nav-research">research</a></li>
+          <li><a href="#" onclick="showSection('teaching')" id="nav-teaching">teaching</a></li>
+          <li><a href="#" onclick="showSection('activities')" id="nav-activities">have we met?</a></li>
+          <li><a href="#" onclick="showSection('cv')" id="nav-cv">cv</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HOME ── -->
+    <section id="section-home" class="section active">
+      <div class="home-layout">
+        <img src="TI_Portrait_Alessandro Capra.jpg" class="home-portrait" alt="Alessandro Capra" />
+        <div class="home-text">
+          <p>Hi, welcome to my page.</p>
+          <p>
+            I am a <strong>PhD candidate in Economics</strong> at the <strong>University of Amsterdam</strong>.
+            My supervisors are <a href="https://www.uva.nl/en/profile/o/n/a.m.onderstal/a.m.onderstal.html">Sander Onderstal</a>
+            and <a href="https://www.uva.nl/en/profile/s/t/j.w.stoelhorst/j.w.stoelhorst.html">J.W. Stoelhorst</a>.
+          </p>
+          <p>
+            My research uses experimental methods to study the interplay between personal and social norms in social
+            dilemmas, and how behavioural mechanism design can harness individual preferences to achieve welfare
+            improvements. I am also interested in how the allocation of advantages and disadvantages shapes our
+            perceptions of ourselves and others, and our interactions with them.
+          </p>
+          <p>
+            You can reach me at <a href="mailto:a.capra@uva.nl">a.capra@uva.nl</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RESEARCH ── -->
+    <section id="section-research" class="section">
+      <h2>Research</h2>
+
+      <h3>Work in Progress</h3>
+      <div class="paper-card">
+        <div class="paper-title">Competitive versus Cooperative Leadership in Group Competition</div>
+        <div class="paper-authors">
+          with <a href="https://sites.google.com/view/subhasishmc/home">S.M. Chowdhury</a>,
+          <a href="https://sites.google.com/site/jooyjeon/">J.Y. Jeon</a>, and
+          <a href="https://www.uva.nl/en/profile/o/n/a.m.onderstal/a.m.onderstal.html">S. Onderstal</a>
+        </div>
+      </div>
+
+      <h3>Pre-PhD Work</h3>
+      <div class="paper-card">
+        <div class="paper-title">
+          Leader Legitimacy in Social Dilemmas: How Do Different Ways of Appointing Leaders Shape Cooperation
+          in Public Good Games?
+        </div>
+        <div class="paper-authors">
+          Supervised by <a href="https://www.uva.nl/en/profile/o/n/a.m.onderstal/a.m.onderstal.html">S. Onderstal</a>
+          and <a href="https://www.uva.nl/en/profile/s/t/j.w.stoelhorst/j.w.stoelhorst.html">J.W. Stoelhorst</a>
+        </div>
+        <button class="abstract-btn" onclick="toggleAbstract(this)">&#43; Abstract</button>
+        <div class="abstract-box">
+          <table>
+            <thead><tr><th>Theme</th><th>Detail</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Research question</td>
+                <td>Does the way leaders are appointed affect cooperation in public good games?</td>
+              </tr>
+              <tr>
+                <td>Motivation</td>
+                <td>Standard results show first movers can increase contributions, but effects are inconsistent. With partial reciprocity, perceived leader legitimacy may play a key role.</td>
+              </tr>
+              <tr>
+                <td>Design</td>
+                <td>One-shot sequential public good game. Leader appointed via random selection, benevolence-based selection (dictator game donations), or competence-based selection (control question performance).</td>
+              </tr>
+              <tr>
+                <td>Key findings</td>
+                <td>Non-random selection affects contributions but not through perceived legitimacy. Competent leaders contribute more on average. Benevolent leader selection leads to lower contributions from both movers.</td>
+              </tr>
+              <tr>
+                <td>Mechanism</td>
+                <td>First movers anticipate lower reciprocity from less charitable second movers; second movers expect higher contributions from benevolent leaders. A mismatch between expectations and actual contributions drives reduced cooperation.</td>
+              </tr>
+              <tr>
+                <td>Implication</td>
+                <td>Leader selection rules matter, but their effects operate through beliefs and expectation gaps, not legitimacy per se.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="blurb">Happy to discuss any of these projects in more detail — feel free to reach out.</p>
+    </section>
+
+    <!-- ── TEACHING ── -->
+    <section id="section-teaching" class="section">
+      <h2>Teaching</h2>
+
+      <div class="teaching-block">
+        <div class="institution-label">University of Amsterdam</div>
+        <div class="role-label">Teaching Assistant — Faculty of Economics and Business &nbsp;·&nbsp; 2025–2026</div>
+        <table class="teaching-table">
+          <thead>
+            <tr><th>Course</th><th>Role</th><th>Evaluation</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Introduction to Python</td>
+              <td>TA</td>
+              <td><span class="eval-pill">4.7 / 5 &nbsp;(n=30)</span></td>
+            </tr>
+            <tr>
+              <td>BSc Thesis Supervision</td>
+              <td>Supervisor</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="teaching-block">
+        <div class="institution-label">University of Amsterdam</div>
+        <div class="role-label">Tutor — PPLE College &nbsp;·&nbsp; 2024–2025</div>
+        <table class="teaching-table">
+          <thead>
+            <tr><th>Course</th><th>Role</th><th>Evaluation</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Economics for a Changing World I</td>
+              <td>Tutor</td>
+              <td><span class="eval-pill">4.3 / 5 &nbsp;(n=28)</span></td>
+            </tr>
+            <tr>
+              <td>Economics for a Changing World II</td>
+              <td>Tutor</td>
+              <td><span class="eval-pill">4.5 / 5 &nbsp;(n=21)</span></td>
+            </tr>
+            <tr>
+              <td>Introduction to Statistical Analysis</td>
+              <td>Tutor</td>
+              <td><span class="eval-pill">4.1 / 5 &nbsp;(n=44)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="teaching-block">
+        <div class="institution-label">Nova School of Business and Economics</div>
+        <div class="role-label">Grader &nbsp;·&nbsp; 2022–2023</div>
+        <table class="teaching-table">
+          <thead>
+            <tr><th>Course</th><th>Programme</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Private Sector Development</td>
+              <td>MSc Economics</td>
+            </tr>
+            <tr>
+              <td>Impact Investment</td>
+              <td>MSc Finance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── HAVE WE MET? ── -->
+    <section id="section-activities" class="section">
+      <h2>Have we met?</h2>
+      <div class="activities-grid">
+
+        <div class="activity-card">
+          <h3>Conferences</h3>
+
+          <div class="activity-year">2026</div>
+          <div class="activity-item">
+            <span class="activity-badge badge-upcoming">Upcoming</span>
+            <span>CBESS-CeDEx-CREED Conference, Nottingham (UK)</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-badge badge-poster">Poster</span>
+            <span>Tinbergen Institute Opening Conference: Science for Society, Amsterdam (NL)</span>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <h3>Training</h3>
+
+          <div class="activity-year">2026</div>
+          <div class="activity-item">
+            <span class="activity-badge badge-upcoming">Upcoming</span>
+            <span>3rd European Economic Review Summer School in Experimental and Behavioral Economics, Lisbon (PT)</span>
+          </div>
+          <div class="activity-item">
+            <span class="activity-badge" style="background:#e8e8e8;color:#444;">Done</span>
+            <span>Tinbergen Institute Summer School: Gender in Society, Amsterdam (NL)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CV ── -->
+    <section id="section-cv" class="section cv-section">
+      <h2>CV</h2>
+      <iframe src="cv-alessandro-capra.pdf" title="Alessandro Capra — CV"></iframe>
+      <a class="cv-download" href="cv-alessandro-capra.pdf" target="_blank">
+        ↓ Download CV (PDF)
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    Alessandro Capra &nbsp;·&nbsp; PhD Candidate in Economics, University of Amsterdam &nbsp;
+    [<a href="mailto:a.capra@uva.nl">Email</a> &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/alessandrocapra98" rel="nofollow noreferrer">LinkedIn</a>]
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      document.getElementById('section-' + id).classList.add('active');
+      document.getElementById('nav-' + id).classList.add('active');
+      return false;
+    }
+
+    function toggleAbstract(btn) {
+      const box = btn.nextElementSibling;
+      const open = box.style.display === 'block';
+      box.style.display = open ? 'none' : 'block';
+      btn.textContent = open ? '+ Abstract' : '− Abstract';
+    }
+
+    // Keep nav links from navigating
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', e => e.preventDefault());
+    });
+  </script>
+
+</body>
+</html>
